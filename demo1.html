@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>member</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="demo1.css" type="text/css">
+</head>
+<body>
+<div id="app-4">
+    <!--v-bind:value="bookinfo"-->
+    <p>member</p>
+    <input type="text" name="name" v-model="newmember.name" placeholder="name" id="app-1">
+    <input type="number" name="schoolnumber" v-model="newmember.shoolnumber" placeholder="number" id="app-2">
+    <input type="text" name="major" v-model="newmember.major" placeholder="major" id="app-3">
+    <button v-on:click="record" id="app-6">record the member infomation</button>
+    <div id="app-5">
+        <table>
+            <tr>
+                <th>name</th>
+                <th>schoolnumber</th>
+                <th>major</th>
+            </tr>
+            <tr is="tr-item" v-for="student in memberinfo" v-bind:member="student" v-bind:key="student.id"></tr>
+        </table>
+    </div>
+</div>
+</body>
+<script>
+    var n=0;
+   var app4=new Vue({
+    el:"#app-4",
+    data:{
+        newmember:[
+            {
+                id:parseInt(n),
+                name:' ',
+                shoolnumber:' ',
+                major:' '
+            }
+        ],
+        memberinfo:[
+            {id:0,name:'邱佳悦',
+            shoolnumber:'201520180110',
+            major:'软件工程'}
+        ]
+    },
+    methods:{
+        record:function () {
+            n=parseInt(n)+1;
+            this.memberinfo.push(this.newmember);
+            this.newmember=[{name:' ',shoolnumber:' ',major:' '}];
+        }
+    }
+})
+    Vue.component('tr-item',{
+        props:['member'],
+        template:'<tr><td>{{member.name}}</td>'+
+        '<td>{{member.shoolnumber}}</td>'+
+        '<td>{{member.major}}</td></tr>'
+    })
+</script>
+</html>

@@ -1,0 +1,47 @@
+body{
+    text-align: center;
+    background: -webkit-linear-gradient(right,#73597B,#130E15);
+}
+@keyframes myfirst
+{
+    0%   {margin-top: -50px;}
+    25%  {margin-top: -20px;}
+    50%  {margin-top: 0px;}
+    75%  {margin-top: 40px;}
+    100% {margin-top: 80px;}
+}
+p{
+    font-style: italic;
+    font-size: larger;
+    color: whitesmoke;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+#app-4{
+    width: 618px;
+    height:418px;
+    animation: myfirst 3s;
+    background-image: url("timg.jpg");
+    background-size: 100% 100%;
+    margin: 0 auto;
+    margin-top: 80px;
+    /*margin-left: 15px;*/
+}
+#app-1,#app-2,#app-3{
+    display: block;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin:0 auto;
+    margin-top: 2px;
+}
+#app-5{
+    color: whitesmoke;
+    margin-left: 0px;
+    margin-top: 70px;
+}
+#app-6{
+    margin-top: 18px;
+}
